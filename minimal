@@ -1,0 +1,101 @@
+:root {
+    --main: #000;
+    --sub: #1c1c1c;
+    --accent: #7d327d;
+    
+    --alice: aliceblue;
+    
+    --online: #41bb41;
+    --offline: #dd5050;
+}
+
+body{background-color:#000;}button{cursor:pointer;}
+main{background:#fff0;color:aliceblue;}
+
+.details .online, .details .ago, .center button[type="submit"]{visibility:hidden;}
+.details .ago:after{background:var(--offline);}.details .online:after{background:var(--online);}
+
+.details .online:after, .details .ago:after {
+    visibility: visible;
+    position: absolute;
+    content: "";
+    width: 100%; height: 2px;
+    top: 0; left: 0;
+}
+
+input {
+    background-color: var(--accent);
+    border: none;
+    height: 20px;
+    width: 180px;
+}
+
+.center label{display:none;}
+
+.center button[type="submit"]::before {
+    visibility:visible;
+    content:"Serach Users";
+    background-color: var(--alice);
+    padding: 3px 8px 4px 8px; 
+    border:none;
+}
+
+.container {
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto 0px !important;
+}
+
+.profile .contact .f-row,
+.details-table td {
+    padding: 4px;
+    margin: 8px;
+}
+
+.contact .f-row:first-child{padding-top:16px;margin-top:0;}
+.contact .f-row:last-child{padding-bottom:16px;margin-bottom:0;}
+
+.profile .contact .heading, .profile .table-section .heading, .profile .contact, .profile .url-info, .profile .table-section{
+    background-color:var(--accent);
+    border: none !important;
+}
+
+.profile .blurbs .heading, .profile .friends .heading {
+    display:none;
+}
+
+.container .links, div .inner {
+    background-color:var(--sub);
+}
+
+.container .top, footer, .blurbs div .heading, .inner td:first-child, .inner td:last-child {
+    background-color: var(--main);
+    color: var(--alice);
+}
+
+a:hover {
+    color: var(--alice) !important;
+    text-shadow: 0 2px 2px var(--accent) !important;
+}
+
+.profile .contact .heading{
+    padding:12px;
+}
+
+.contact .heading:after{
+    content:" - Hover2Open";
+}
+
+ .contact .inner{
+    max-height: 0;
+  transition: max-height 0.3s ease-out;
+  visibility: hidden;
+}
+
+
+.contact .heading:hover ~ .inner, .contact .inner:hover{
+    position:relative;
+    visibility:visible;
+    max-height: 500px;
+    transition: max-height 0.3s ease-in;
+}
